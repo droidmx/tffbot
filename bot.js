@@ -53,7 +53,30 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 .setAuthor("The Forgotten Foes", client.user.avatarURL)
 .addField("<:nest:452249356607946752> Killed: ", `EDITTHIS`);
 	// ACTUAL NEST: <:nest:384850069062418433>
-	msg.channel.send({nestmessage})
+	console.log(nestmessage)
+	msg.channel.send({
+		embed: {
+		color: 0x00FFFF,
+            author: {
+                name: `The Forgotten Foes`,
+                icon_url: client.user.avatarURL
+            },
+            fields: [{
+                    name: "<:nest:452249356607946752> Killed: ",
+                    value: `editthis`,
+                    
+                }
+               
+            ],
+            footer: {
+                text: "Bot coded by ~Droid~#5799, be sure to check #partners for other cool discords!",
+            },
+            thumbnail: {
+                url: "https://i.imgur.com/QA1xlFQ.png"
+}
+		
+		}
+	})
 }
 		if (msg.content.startsWith(prefix + 'nestkilled')) {
 		msg.channel.send("test")	
