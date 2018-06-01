@@ -49,7 +49,7 @@ let argss = msg.content.split(" ")
     return;
 }
 if (msg.content.startsWith(prefix + 'nestmessage')) {
-	const nestmessage = new new Discord.RichEmbed()
+	const nestmessage = new Discord.RichEmbed()
 .setAuthor("The Forgotten Foes", client.user.avatarURL)
 .addField("<:nest:452249356607946752> Killed: ", `EDITTHIS`);
 	// ACTUAL NEST: <:nest:384850069062418433>
