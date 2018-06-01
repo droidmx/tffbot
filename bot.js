@@ -3,10 +3,12 @@ const client = new Discord.client();
 const snekfetch = require("snekfetch");
 const fs = require("fs");
 const ms = require("ms");
+let test = JSON.parse(fs.readFileSync('./test.json', 'utf8'));
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: `event dungeons | >>commands`, type: 0 }});
+  client.user.setPresence({ game: { name: `event dungeons | >>help`, type: 0 }});
 });
 client.on('guildMemberAdd', member => {
 
@@ -40,15 +42,164 @@ client.on('guildMemberAdd', member => {
   if (msg.author.bot) return;
 let args = msg.content.split(" ").slice(1);
 let argss = msg.content.split(" ")
+
+
+	   
     if (!msg.content.startsWith(prefix)) {
     return;
 }
-
+if (msg.content.startsWith(prefix + 'nestmessage')) {
+	const nestmessage = new new Discord.RichEmbed()
+.setAuthor("The Forgotten Foes", client.user.avatarURL)
+.addField("<:nest:452249356607946752> Killed: ", `EDITTHIS`);
+	// ACTUAL NEST: <:nest:384850069062418433>
+	msg.channel.send({nestmessage})
+}
+		if (msg.content.startsWith(prefix + 'nestkilled')) {
+		msg.channel.send("test")	
+		}
  if (msg.content.startsWith(prefix + 'ping')) {
     msg.channel.send("Pinging... :signal_strength:").then(sent => {
       sent.edit(`:ping_pong: Pong! | Time Taken: ${sent.createdTimestamp - msg.createdTimestamp}ms`)
     })
 }
+		if (msg.content.startsWith(prefix + "verify")) {
+		if (msg.member.roles.some(r => ["Verified Member"].includes(r.name))) {
+            msg.author.send("You are already verified!")
+            msg.delete();
+            return;
+        }
+        msg.delete();
+        let ruser = argss[1]
+            let rcode = ("TFF" + Math.floor(Math.random(11111) * 99999));
+let rapi = "http://www.tiffit.net/RealmInfo/api/user?u=" + ruser + "&f=c;"
+if (!test[msg.author.id]) {
+	test[msg.author.id] = {ign: `${ruser}`, code: `${rcode}`}
+}
+			else{
+			test[msg.author.id] = {ign: `${ruser}`, code: `${rcode}`}	
+			}
+        msg.delete();
+        
+        let userdata = test[msg.author.id]
+
+                msg.author.send({
+                    embed: {
+                        color: 0xa3fb7a,
+                        author: {
+                            name: `Verification | @${msg.author.tag}`,
+                            icon_url: msg.author.avatarURL
+                        },
+                        fields: [{
+                                name: "**Your Code:**",
+                                value: `__**${userdata.code}**__`,
+                                inline: true,
+                            },
+                            {
+                                name: "**Realmeye Link:**",
+                                value: `https://www.realmeye.com/player/${userdata.ign}`,
+                                inline: true,
+                            },
+                            {
+                                name: `Place your verification code on any line of your description, but __*it must be the only piece of text on that line.*__`,
+                                value: "Once you have placed the code, type `done` in #verify",
+                            },
+                        ],
+                        footer: {
+                            text: "⚠ Be sure to follow the directions above exactly, or your verification will fail",
+                        }
+                    }
+               
+			});
+    
+        console.log(test)
+fs.writeFile('./test.json', JSON.stringify(test), console.error);	
+		}
+		
+		if (msg.content.startsWith(prefix + "done")) {
+			 if (msg.member.roles.some(r => ["Shatters"].includes(r.name))) 
+            return;
+        let userdatadone = test[msg.author.id]
+        if (!userdatadone) {
+            msg.author.send("Your IGN and Code was not found in the database, please go to #verify and type `!verify IGN`!")
+            msg.delete()
+            return;
+        }
+        msg.delete();
+        console.log(userdatadone)
+                   let codexd =  userdatadone.code
+                   let ignxd = userdatadone.ign
+                   let rrapi = "http://www.tiffit.net/RealmInfo/api/user?u=" + ignxd + "&f=c;"
+                   
+        
+        snekfetch.get(rrapi).then(r => {
+                        let rdesc = r.body.description;
+                        let rname = r.body.name
+                        let rstars = r.body.rank
+                        let rlocation = r.body.last_seen
+                        let rfame = r.body.fame
+
+                        if (!rdesc.includes(codexd))
+                            return msg.author.send("Your code was not found in any line of your description. Make sure that your code is the ONLY piece of text in one line of your description.")
+
+
+                        if (rstars < (15))
+                            return msg.author.send("You do not have enough stars to be verified! You have " + rstars + ". You need __**15**__.")
+
+
+                        if (!rlocation.includes("hidden"))
+                            return msg.author.send("Your location is not hidden so you cannot be verified!")
+
+                        if (rfame < (500))
+                            return msg.author.send("Your do not have enough fame to be verified! You have " + rfame + ". You need __**500**__.")
+
+
+                        if (rdesc.includes(codexd))
+                            msg.guild.member(msg.author).setNickname(`${rname}`)
+                        let lelxdppebtw = msg.guild.roles.find("name", "Verified Member");
+                        // id wasnt working some times, 433784738998910977
+                        msg.guild.member(msg.author).addRole(lelxdppebtw.id)
+                        msg.author.send("You have successfully been verified!");
+                        msg.guild.channels.find("name", "logging").send({
+                            embed: {
+                                color: 0xfb7ae4,
+                                author: {
+                                    name: `User Verified | <@${msg.author.tag}>`,
+                                    icon_url: msg.author.avatarURL
+                                },
+                                fields: [{
+                                        name: "**Realmeye Link:**",
+                                        value: `https://www.realmeye.com/player/${ignxd}`,
+                                        inline: true,
+                                    },
+                                    {
+                                        name: "__**User IGN**__",
+                                        value: ignxd,
+                                        inline: true,
+                                    },
+                                    {
+                                        name: "__**Character Fame**__",
+                                        value: rfame + " Fame",
+                                        inline: true,
+                                    },
+                                    {
+                                        name: "__**Stars**__",
+                                        value: rstars + " Stars",
+                                        inline: true,
+                                    }
+
+
+                                ],
+                                footer: {
+                                    text: "User has been verified by the bot.",
+                                }
+                            }
+                        });
+
+
+})
+		}
+		
 if (msg.content.startsWith(prefix + "serverinfo")) {
     const embed = new Discord.RichEmbed()
 
