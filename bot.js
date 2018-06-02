@@ -36,24 +36,22 @@ client.on('guildMemberAdd', member => {
 });
         });
         
-        const prefix = ">>"
+        const prefix = "!"
         
         client.on('message', msg => { // START MESSAGE HANDLER
   if (msg.author.bot) return;
 let args = msg.content.split(" ").slice(1);
 let argss = msg.content.split(" ")
 
-
+if (!test[nest]) test[nest] = 0
 	   
     if (!msg.content.startsWith(prefix)) {
     return;
 }
 if (msg.content.startsWith(prefix + 'nestmessage')) {
-	const nestmessage = new Discord.RichEmbed()
-.setAuthor("The Forgotten Foes", client.user.avatarURL)
-.addField("<:nest:452249356607946752> Killed: ", `EDITTHIS`);
+	
 	// ACTUAL NEST: <:nest:384850069062418433>
-	console.log(nestmessage)
+	let counterxd = test[nest]
 	msg.channel.send({
 		embed: {
 		color: 0x00FFFF,
@@ -63,13 +61,57 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
             },
             fields: [{
                     name: "<:nest:452249356607946752> Killed: ",
-                    value: `editthis`,
+                    value: `${counterxd}`,
                     
                 }
                
             ],
             footer: {
-                text: "Bot coded by ~Droid~#5799, be sure to check #partners for other cool discords!",
+                text: "Bot coded by ~Droid~#5799",
+            },
+            thumbnail: {
+                url: "https://i.imgur.com/QA1xlFQ.png"
+}
+		
+		}
+	}).then(id=> {
+		console.log(id.message_id)
+		if (!test[nestid]) {
+			test[nestid] = id.message_id
+		}else{
+			test[nestid] = id.message_id
+		}
+			
+	})
+		
+}
+	if (msg.content.startsWith(prefix + 'nestkilled')) {
+		let updatedcounter = test[nest] + 1
+		if (!test[nest]) {
+			test[nest] = updatedcounter
+		}else{
+			test[nest] = updatedcounter
+		}
+		let msgidupdated = test[nestid]
+		console.log(updatedcounter)
+			let channel = msg.guild.channels.find("name", "nest-test")
+			let xddd = channel.fetchMessage(msgidupdated).then(asd=> {
+		asd.edit({
+		embed: {
+		color: 0x00FFFF,
+            author: {
+                name: `The Forgotten Foes`,
+                icon_url: client.user.avatarURL
+            },
+            fields: [{
+                    name: "<:nest:452249356607946752> Killed: ",
+                    value: `${updatedcounter}`,
+                    
+                }
+               
+            ],
+            footer: {
+                text: "Bot coded by ~Droid~#5799",
             },
             thumbnail: {
                 url: "https://i.imgur.com/QA1xlFQ.png"
@@ -77,10 +119,8 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 		
 		}
 	})
-}
-		if (msg.content.startsWith(prefix + 'nestkilled')) {
-		msg.channel.send("test")	
-		}
+		})
+	}	
  if (msg.content.startsWith(prefix + 'ping')) {
     msg.channel.send("Pinging... :signal_strength:").then(sent => {
       sent.edit(`:ping_pong: Pong! | Time Taken: ${sent.createdTimestamp - msg.createdTimestamp}ms`)
