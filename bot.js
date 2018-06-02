@@ -75,16 +75,16 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 }
 		
 		}
-	})
-	let FUCKINGID = client.user.lastMessageID
-		console.log(FUCKINGID)
+	}).then(m=>
+	console.log(m.id)
+	
 		if (!test[nestid]) {
-			test[nestid] = FUCKINGID
+			test[nestid] = m.id
 		}else{
-			test[nestid] = FUCKINGID
+			test[nestid] = m.id
 		}
 			
-	
+	)
 		
 }
 	if (msg.content.startsWith(prefix + 'nestkilled')) {
@@ -94,7 +94,8 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 		}else{
 			test[nest] = updatedcounter
 		}
-		let msgidupdated = '452274405461196810'
+		let fuck = test[nestid]
+		let msgidupdated = '${fuck}'
 		console.log(updatedcounter)
 			let channel = msg.guild.channels.find("name", "nest-test")
 			let xddd = channel.fetchMessage(msgidupdated).then(asd=> {
