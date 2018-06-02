@@ -43,6 +43,7 @@ client.on('guildMemberAdd', member => {
 let args = msg.content.split(" ").slice(1);
 let argss = msg.content.split(" ")
 let nest = "somethingidec"
+let nestid = "alsosomethingidec"
 if (!test[nest]) test[nest] = 0
 	   
     if (!msg.content.startsWith(prefix)) {
