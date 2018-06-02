@@ -4,6 +4,7 @@ const snekfetch = require("snekfetch");
 const fs = require("fs");
 const ms = require("ms");
 let test = JSON.parse(fs.readFileSync('./test.json', 'utf8'));
+let test2 = JSON.parse(fs.readFileSync('./test2.json', 'utf8'));
 
 
 client.on('ready', () => {
@@ -174,7 +175,7 @@ if (!test[msg.author.id]) {
 			});
     
         console.log(test)
-fs.writeFile('./test.json', JSON.stringify(test), console.error);	
+
 		}
 		
 		if (msg.content.startsWith(prefix + "done")) {
@@ -378,3 +379,5 @@ if (!msg.member.hasPermission("ADMINISTRATOR"))
 });
 
 client.login(process.env.BOT_TOKEN)
+fs.writeFile('./test.json', JSON.stringify(test), console.error);
+fs.writeFile('./test2.json', JSON.stringify(test), console.error);	
