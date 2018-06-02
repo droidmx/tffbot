@@ -53,7 +53,7 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 	
 	// ACTUAL NEST: <:nest:384850069062418433>
 	let counterxd = test[nest]
-	msg.channel.send({
+	var bihluh = msg.channel.send({
 		embed: {
 		color: 0x00FFFF,
             author: {
@@ -75,15 +75,15 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 }
 		
 		}
-	}).then(id=> {
-		console.log(id.message_id)
+	})
+		console.log(bihluh.message_id)
 		if (!test[nestid]) {
-			test[nestid] = id.message_id
+			test[nestid] = bihluh.message_id
 		}else{
-			test[nestid] = id.message_id
+			test[nestid] = bihluh.message_id
 		}
 			
-	})
+	
 		
 }
 	if (msg.content.startsWith(prefix + 'nestkilled')) {
