@@ -94,7 +94,7 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 		}else{
 			test[nest] = updatedcounter
 		}
-		let msgidupdated = 452274405461196810
+		let msgidupdated = '452274405461196810'
 		console.log(updatedcounter)
 			let channel = msg.guild.channels.find("name", "nest-test")
 			let xddd = channel.fetchMessage(msgidupdated).then(asd=> {
