@@ -78,11 +78,11 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 		}
 	})
 	const npending = await bihluh
-	console.log(npending)
+	console.log(npending.id)
 	if (!test[nestid]) {
-			test[nestid] = npending
+			test[nestid] = npending.id
 		}else{
-			test[nestid] = npending
+			test[nestid] = npending.id
 		}
 		
 }
@@ -94,7 +94,7 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 			test[nest] = updatedcounter
 		}
 		let fuck = test[nestid]
-		let msgidupdated = '${fuck}'
+		let msgidupdated = `${fuck}`
 		console.log(updatedcounter)
 			let channel = msg.guild.channels.find("name", "nest-test")
 			let xddd = channel.fetchMessage(msgidupdated).then(asd=> {
