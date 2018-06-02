@@ -76,11 +76,12 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 		
 		}
 	})
-		console.log(bihluh.message_id)
+	let FUCKINGID = client.user.lastMessageID
+		console.log(FUCKINGID)
 		if (!test[nestid]) {
-			test[nestid] = bihluh.message_id
+			test[nestid] = FUCKINGID
 		}else{
-			test[nestid] = bihluh.message_id
+			test[nestid] = FUCKINGID
 		}
 			
 	
