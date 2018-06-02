@@ -109,8 +109,8 @@ if (!test[nkilled]) {
 		
 		}
 	if (msg.content.startsWith(prefix + 'nestdied'))  {
-		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; msg.channel.send('you dont have perms to use this command!') 
-		
+		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))){ return; msg.channel.send('you dont have perms to use this command!') 
+												       }
 		let updatedcounter = test[nest] + 1
 		if (!test[nest]) {
 			test[nest] = updatedcounter
