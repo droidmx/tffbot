@@ -42,7 +42,7 @@ client.on('guildMemberAdd', member => {
   if (msg.author.bot) return;
 let args = msg.content.split(" ").slice(1);
 let argss = msg.content.split(" ")
-
+let nest = "somethingidec"
 if (!test[nest]) test[nest] = 0
 	   
     if (!msg.content.startsWith(prefix)) {
