@@ -56,7 +56,7 @@ if (!test[nest]) test[nest] = 0
     if (!msg.content.startsWith(prefix)) {
     return;
 }
-if (msg.content.startsWith(prefix + 'nestmessageonlydroid')) {
+if (msg.content.startsWith(prefix + 'nmessageonlydroidxdxdxd')) {
 	
 	// ACTUAL NEST: <:nest:384850069062418433>
 	let counterxd = test[nest]
@@ -92,9 +92,9 @@ if (msg.content.startsWith(prefix + 'nestmessageonlydroid')) {
 		}
 		
 }
-		if (msg.content.startsWith(prefix + 'nest')) {
+		if (msg.content === prefix + 'nest') {
 		let nestloc = args
-		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; msg.channel.send('you dont have perms to use this command!') 
+		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; 
 		const idefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
 \n ***Location:*** ${nestloc} \n React with <:nest:384850069062418433> if you are coming!`).then(r=>
 												 r.react('384850069062418433')
@@ -108,9 +108,9 @@ if (!test[nkilled]) {
 		
 		
 		}
-	if (msg.content.startsWith(prefix + 'nestdied'))  {
-		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))){ return; msg.channel.send('you dont have perms to use this command!') 
-												       }
+	if (msg.content === prefix + 'nestdied')  {
+		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return;  
+												       
 		let updatedcounter = test[nest] + 1
 		if (!test[nest]) {
 			test[nest] = updatedcounter
