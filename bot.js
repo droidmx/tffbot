@@ -54,7 +54,7 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 	
 	// ACTUAL NEST: <:nest:384850069062418433>
 	let counterxd = test[nest]
-	const bihluh = await msg.channel.send({
+	const bihluh = msg.channel.send({
 		embed: {
 		color: 0x00FFFF,
             author: {
@@ -76,11 +76,14 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 }
 		
 		}
-	}).then(m=>
-	console.log(m.id)
-
-			
-	)
+	})
+	const npending = await bihluh
+	console.log(npending)
+	if (!test[nestid]) {
+			test[nestid] = npending
+		}else{
+			test[nestid] = npending
+		}
 		
 }
 	if (msg.content.startsWith(prefix + 'nestkilled'))  {
