@@ -45,12 +45,18 @@ let args = msg.content.split(" ").slice(1);
 let argss = msg.content.split(" ")
 let nest = "somethingidec"
 let nestid = "alsosomethingidec"
+let nkilled = 'ifuckindontcare'
+let nchannel = msg.guild.channels.find("name", "click-here-for-nest")
+let sen = "somethisngidec"
+let senid = "alsossomethingidec"
+let skilled = 'ifuckinsdontcare'
+let schannel = msg.guild.channels.find("name", "click-here-for-sentry")
 if (!test[nest]) test[nest] = 0
 	   
     if (!msg.content.startsWith(prefix)) {
     return;
 }
-if (msg.content.startsWith(prefix + 'nestmessage')) {
+if (msg.content.startsWith(prefix + 'nestmessageonlydroid')) {
 	
 	// ACTUAL NEST: <:nest:384850069062418433>
 	let counterxd = test[nest]
@@ -62,7 +68,7 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
                 icon_url: client.user.avatarURL
             },
             fields: [{
-                    name: "<:nest:452249356607946752> Killed: ",
+                    name: "<:nest:384850069062418433> Killed: ",
                     value: `${counterxd}`,
                     
                 }
@@ -86,18 +92,38 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 		}
 		
 }
-	if (msg.content.startsWith(prefix + 'nestkilled'))  {
+		if (msg.content.startsWith(prefix + 'nest')) {
+		let nestloc = args
+		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; msg.channel.send('you dont have perms to use this command!') 
+		const idefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
+\n ***Location:*** ${nestloc} \n React with <:nest:384850069062418433> if you are coming!`).then(r=>
+												 r.react('384850069062418433')
+												 )
+		const ncallpending = await idefk
+if (!test[nkilled]) {
+			test[nkilled] = ncallpending
+		}else{
+			test[nkilled] = ncallpending
+		}
+		
+		
+		}
+	if (msg.content.startsWith(prefix + 'nestdied'))  {
+		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; msg.channel.send('you dont have perms to use this command!') 
+		
 		let updatedcounter = test[nest] + 1
 		if (!test[nest]) {
 			test[nest] = updatedcounter
 		}else{
 			test[nest] = updatedcounter
 		}
+		let fuckme = test[nkilled]
+		fuckme.delete();
 		let fuck = test[nestid]
 		let msgidupdated = `${fuck}`
 		console.log(updatedcounter)
-			let channel = msg.guild.channels.find("name", "nest-test")
-			let xddd = channel.fetchMessage(msgidupdated).then(asd=> {
+			
+			let xddd = nchannel.fetchMessage(msgidupdated).then(asd=> {
 		asd.edit({
 		embed: {
 		color: 0x00FFFF,
@@ -106,7 +132,7 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
                 icon_url: client.user.avatarURL
             },
             fields: [{
-                    name: "<:nest:452249356607946752> Killed: ",
+                    name: "<:nest:384850069062418433> Killed: ",
                     value: `${updatedcounter}`,
                     
                 }
