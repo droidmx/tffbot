@@ -38,7 +38,7 @@ client.on('guildMemberAdd', member => {
         
         const prefix = "!"
         
-        client.on('message', msg => { // START MESSAGE HANDLER
+        client.on('message', async msg => { // START MESSAGE HANDLER
   if (msg.author.bot) return;
 let args = msg.content.split(" ").slice(1);
 let argss = msg.content.split(" ")
@@ -53,7 +53,7 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 	
 	// ACTUAL NEST: <:nest:384850069062418433>
 	let counterxd = test[nest]
-	var bihluh = msg.channel.send({
+	const bihluh = await msg.channel.send({
 		embed: {
 		color: 0x00FFFF,
             author: {
@@ -77,17 +77,12 @@ if (msg.content.startsWith(prefix + 'nestmessage')) {
 		}
 	}).then(m=>
 	console.log(m.id)
-	
-		if (!test[nestid]) {
-			test[nestid] = m.id
-		}else{
-			test[nestid] = m.id
-		}
+
 			
 	)
 		
 }
-	if (msg.content.startsWith(prefix + 'nestkilled')) {
+	if (msg.content.startsWith(prefix + 'nestkilled'))  {
 		let updatedcounter = test[nest] + 1
 		if (!test[nest]) {
 			test[nest] = updatedcounter
