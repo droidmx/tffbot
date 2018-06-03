@@ -118,7 +118,8 @@ if (!test[nkilled]) {
 			test[nest] = updatedcounter
 		}
 		let fuckme = test[nkilled]
-		let fuckmeharder = nchannel.fetchMessage(fuckme).then(asd=> asd.delete() )
+		let ohhyes = `${fuckme}`
+		let fuckmeharder = nchannel.fetchMessage(ohhyes).then(asd=> asd.delete() )
 		let fuck = test[nestid]
 		let msgidupdated = `${fuck}`
 		console.log(updatedcounter)
