@@ -101,9 +101,9 @@ if (msg.content.startsWith(prefix + 'nmessageonlydroidxdxdxd')) {
 												 )
 		const ncallpending = await idefk
 if (!test[nkilled]) {
-			test[nkilled] = ncallpending
+			test[nkilled] = ncallpending.id
 		}else{
-			test[nkilled] = ncallpending
+			test[nkilled] = ncallpending.id
 		}
 		
 		
@@ -118,7 +118,7 @@ if (!test[nkilled]) {
 			test[nest] = updatedcounter
 		}
 		let fuckme = test[nkilled]
-		fuckme.delete();
+		let fuckmeharder = nchannel.fetchMessage(fuckme).then(asd=> asd.delete() )
 		let fuck = test[nestid]
 		let msgidupdated = `${fuck}`
 		console.log(updatedcounter)
