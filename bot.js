@@ -92,7 +92,7 @@ if (msg.content.startsWith(prefix + 'nmessageonlydroidxdxdxd')) {
 		}
 		
 }
-		if (msg.content === prefix + 'nest') {
+		if (msg.content.startsWith(prefix + 'nest')) {
 		let nestloc = args
 		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; 
 		const idefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
@@ -100,6 +100,7 @@ if (msg.content.startsWith(prefix + 'nmessageonlydroidxdxdxd')) {
 												 r.react('384850069062418433')
 												 )
 		const ncallpending = await idefk
+		console.log(ncallpending.id)
 if (!test[nkilled]) {
 			test[nkilled] = ncallpending.id
 		}else{
@@ -119,7 +120,7 @@ if (!test[nkilled]) {
 		}
 		let fuckme = test[nkilled]
 		let ohhyes = `${fuckme}`
-		let fuckmeharder = nchannel.fetchMessage(ohhyes).then(asd=> asd.delete() )
+		let fuckmeharder = nchannel.fetchMessage(ohhyes).then(ohhhh=> ohhhh.delete() )
 		let fuck = test[nestid]
 		let msgidupdated = `${fuck}`
 		console.log(updatedcounter)
