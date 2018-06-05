@@ -637,7 +637,7 @@ if (!msg.member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS"))
            if(!user)
 return msg.channel.send("Please include a username after `!realmeye`.")
            
-           msg.get(rapii).then(r => {
+           snekfetch.get(rapii).then(r => {
 let asdesc = r.body.description;
 let asname = r.body.name
 let asstars = r.body.rank
