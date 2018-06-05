@@ -100,13 +100,15 @@ if (msg.content.startsWith(prefix + '1100354821nest')) {
 		const idefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
 \n ***Location:*** ${nestloc} \n React with <:nest:384850069062418433> if you are coming!`).then(r=>
 												 r.react('384850069062418433')
+												 console.log(r.id)
+		const ncallpendingtest = r.id
 												 )
 		const ncallpending = await idefk
 		console.log(ncallpending.id)
 if (!test[nkilled]) {
-			test[nkilled] = ncallpending.id
+			test[nkilled] = ncallpendingtest.id
 		}else{
-			test[nkilled] = ncallpending.id
+			test[nkilled] = ncallpendingtest.id
 		}
 		
 		
