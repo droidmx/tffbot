@@ -97,18 +97,16 @@ if (msg.content.startsWith(prefix + '1100354821nest')) {
 		if (msg.content.startsWith(prefix + 'callnest')) {
 		let nestloc = args
 		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; 
-		const idefk = await nchannel.send(`@here A Nest has been called by ${msg.author}! 
-\n ***Location:*** ${nestloc} \n React with <:nest:384850069062418433> if you are coming!`).then(r=>
-												 r.react('384850069062418433')
-												 
+		const idefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
+\n ***Location:*** ${nestloc} \n React with <:nest:384850069062418433> if you are coming!`)
 		
-												 )
-		
-		console.log(idefk.id)
+		const messageeditid = await idefk
+		messageeditid.react('384850069062418433')
+		console.log(messageeditid.id)
 if (!test[nkilled]) {
-			test[nkilled] = idefk.id
+			test[nkilled] = messageeditid.id
 		}else{
-			test[nkilled] = idefk.id
+			test[nkilled] = messageeditid.id
 		}
 		
 		
