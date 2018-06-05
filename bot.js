@@ -122,6 +122,10 @@ if (msg.content.startsWith(prefix + '1100354821nest')) {
 		
 }
 		if (msg.content.startsWith(prefix + 'callnest')) {
+			if (test[nkilled] != 0) {
+			msg.reply('There is an event already active! If it is dead, type `!nestdied` and than call the new nest!')
+				return;
+			}
 		let nestloc = args
 		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; 
 		const idefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
@@ -240,6 +244,10 @@ if (!test[nkilled]) {
 		
 }
 		if (msg.content.startsWith(prefix + 'callsentry')) {
+			if (test[skilled] != 0) {
+			msg.reply('There is an event already active! If it is dead, type `!sentrydoed` and than call the new sentry!')
+				return;
+			}
 		let anestloc = args
 		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; 
 		const aidefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
