@@ -57,9 +57,7 @@ if (!test[nest]) test[nest] = 0
 if (!test[sen]) test[sen] = 0
 		
 	   
-    if (!msg.content.startsWith(prefix)) {
-    return;
-}
+    
 if (msg.content.startsWith(prefix + '1100354821nest')) {
 	
 	// ACTUAL NEST: <:nest:384850069062418433>
@@ -250,7 +248,7 @@ if (!test[skilled]) {
 		let amsgidupdated = `${afuck}`
 		console.log(aupdatedcounter)
 			
-			let axddd = nchannel.fetchMessage(amsgidupdated).then(aasd=> {
+			let axddd = schannel.fetchMessage(amsgidupdated).then(aasd=> {
 		aasd.edit({
 		embed: {
 		color: 0x00FFFF,
@@ -353,6 +351,7 @@ if (!test[msg.author.id]) {
 		if (msg.content.startsWith("done")) {
 			 if (msg.member.roles.some(r => ["Members"].includes(r.name))) {
 				 msg.author.send('You are already verified!')
+				 msg.delete()
 				 return;
 			 }
             
@@ -364,7 +363,7 @@ if (!test[msg.author.id]) {
         }
         msg.delete();
         console.log(userdatadone)
-                   let codexd =  userdatadone.code
+                   let ccodexd =  userdatadone.code
                    let ignxd = userdatadone.ign
                    let rrapi = "http://www.tiffit.net/RealmInfo/api/user?u=" + ignxd + "&f=c;"
                    
@@ -376,7 +375,7 @@ if (!test[msg.author.id]) {
                         let rlocation = r.body.last_seen
                         let rfame = r.body.fame
 
-                        if (!rdesc.includes(codexd))
+                        if (!rdesc.includes(ccodexd))
                             return msg.author.send("Your code was not found in any line of your description. Make sure that your code is the ONLY piece of text in one line of your description.")
 
 
@@ -391,7 +390,7 @@ if (!test[msg.author.id]) {
                             return msg.author.send("Your do not have enough fame to be verified! You have " + rfame + ". You need __**500**__.")
 
 
-                        if (rdesc.includes(codexd))
+                        if (rdesc.includes(ccodexd))
                             msg.guild.member(msg.author).setNickname(`${rname}`)
                         let lelxdppebtw = msg.guild.roles.find("name", "Members");
                         // id wasnt working some times, 433784738998910977
@@ -634,11 +633,11 @@ if (!msg.member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS"))
 		let user = args.slice(0).join("");
            let rapii = "http://www.tiffit.net/RealmInfo/api/user?u=" + user + "&f=c;";
           
-           message.delete();
+           msg.delete();
            if(!user)
-return message.channel.send("Please include a username after `!realmeye`.")
+return msg.channel.send("Please include a username after `!realmeye`.")
            
-           snekfetch.get(rapii).then(r => {
+           msg.get(rapii).then(r => {
 let asdesc = r.body.description;
 let asname = r.body.name
 let asstars = r.body.rank
@@ -652,7 +651,7 @@ let asguild = r.body.guild
 
 
            
-           message.channel.send({embed: {
+           msg.channel.send({embed: {
   color: 0xfbd27a,
   author: {
     name: "Realmeye Info for" + user,
