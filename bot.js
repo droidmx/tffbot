@@ -30,7 +30,7 @@ client.on('guildMemberAdd', member => {
                
             ],
             footer: {
-                text: "Bot coded by ~Droid~#5799, be sure to check #partners for other cool discords!",
+                text: "Bot coded by ~Droid~#5799, be sure to his other cool discords!",
             },
             thumbnail: {
                 url: "https://cdn.discordapp.com/icons/384620585948413956/28ca7982f138995662cca7317dc1b6d2.jpg"
@@ -260,7 +260,7 @@ if (!test[skilled]) {
             },
             fields: [{
                     name: "<:sentry:384850040612585482> Sentries Killed: ",
-                    value: `${updatedcounter}`,
+                    value: `${aupdatedcounter}`,
                     
                 }
                
@@ -351,8 +351,11 @@ if (!test[msg.author.id]) {
 		}
 		
 		if (msg.content.startsWith("done")) {
-			 if (msg.member.roles.some(r => ["Members"].includes(r.name))) 
-            return;
+			 if (msg.member.roles.some(r => ["Members"].includes(r.name))) {
+				 msg.author.send('You are already verified!')
+				 return;
+			 }
+            
         let userdatadone = test[msg.author.id]
         if (!userdatadone) {
             msg.author.send("Your IGN and Code was not found in the database, please go to #verify and type `!verify IGN`!")
