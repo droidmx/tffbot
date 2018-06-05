@@ -219,7 +219,7 @@ if (!test[nkilled]) {
 \n ***Location:***  ${anestloc} \n React with <:sentry:384850040612585482> if you are coming!`)
 		
 		const amessageeditid = await aidefk
-		amessageeditid.react('384850069062418433')
+		amessageeditid.react('384850040612585482')
 		console.log(amessageeditid.id)
 if (!test[skilled]) {
 			test[skilled] = amessageeditid.id
@@ -243,7 +243,7 @@ if (!test[skilled]) {
 		}
 		let afuckme = test[skilled]
 		let aohhyes = `${afuckme}`
-		let afuckmeharder = nchannel.fetchMessage(aohhyes).then(aohhhh=> aohhhh.delete() )
+		let afuckmeharder = schannel.fetchMessage(aohhyes).then(aohhhh=> aohhhh.delete() )
 		let afuck = test[senid]
 		let amsgidupdated = `${afuck}`
 		console.log(aupdatedcounter)
