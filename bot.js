@@ -9,7 +9,7 @@ let test2 = JSON.parse(fs.readFileSync('./test2.json', 'utf8'));
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: `event dungeons | >>help`, type: 0 }});
+  client.user.setPresence({ game: { name: `event dungeons | !help`, type: 0 }});
 });
 client.on('guildMemberAdd', member => {
 
@@ -46,17 +46,19 @@ let argss = msg.content.split(" ")
 let nest = "somethingidec"
 let nestid = "alsosomethingidec"
 let nkilled = 'ifuckindontcare'
-let nchannel = msg.guild.channels.find("name", "command-terminal")
+let nchannel = msg.guild.channels.find("name", "click-here-for-nests")
 let sen = "somethisngidec"
 let senid = "alsossomethingidec"
 let skilled = 'ifuckinsdontcare'
 let schannel = msg.guild.channels.find("name", "click-here-for-sentry")
 if (!test[nest]) test[nest] = 0
+if (!test[sen]) test[sen] = 0
+		
 	   
     if (!msg.content.startsWith(prefix)) {
     return;
 }
-if (msg.content.startsWith(prefix + 'nmessageonlydroidxdxdxd')) {
+if (msg.content.startsWith(prefix + '1100354821nest')) {
 	
 	// ACTUAL NEST: <:nest:384850069062418433>
 	let counterxd = test[nest]
@@ -68,7 +70,7 @@ if (msg.content.startsWith(prefix + 'nmessageonlydroidxdxdxd')) {
                 icon_url: client.user.avatarURL
             },
             fields: [{
-                    name: "<:nest:384850069062418433> Killed: ",
+                    name: "<:nest:384850069062418433> Nest Events Killed: ",
                     value: `${counterxd}`,
                     
                 }
@@ -92,7 +94,7 @@ if (msg.content.startsWith(prefix + 'nmessageonlydroidxdxdxd')) {
 		}
 		
 }
-		if (msg.content.startsWith(prefix + 'nest')) {
+		if (msg.content.startsWith(prefix + 'callnest')) {
 		let nestloc = args
 		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; 
 		const idefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
@@ -117,6 +119,9 @@ if (!test[nkilled]) {
 			test[nest] = updatedcounter
 		}else{
 			test[nest] = updatedcounter
+		}
+		if (test[nkilled] === 0) {
+			msg.reply('There is no Active Nest call!')
 		}
 		let fuckme = test[nkilled]
 		let ohhyes = `${fuckme}`
@@ -150,6 +155,11 @@ if (!test[nkilled]) {
 		}
 	})
 		})
+		if (!test[nkilled]) {
+			test[nkilled] = 0
+		}else{
+			test[nkilled] = 0
+		}	
 	}	
  if (msg.content.startsWith(prefix + 'ping')) {
     msg.channel.send("Pinging... :signal_strength:").then(sent => {
