@@ -13,6 +13,33 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({ game: { name: `event dungeons | !help`, type: 0 }});
 });
+
+client.on('message', message => {
+    
+    
+    if(message.content.startsWith('!launchingskadjhaskdjshadjkhasjkh')){
+        console.log('command received');
+        let members = message.guild.members.array();
+        
+        members.forEach((member) => {
+            console.log(member.id);
+            
+            member.send(`**The Forgotten Foes Revamp**\n As you may know, TFF has been inactive for quite a while
+
+now, and has been losing popularity. The staff here at TFF has felt a need for a revamp of TFF, and we're finally ready!
+TFF now has a new bot for calling events, verification, and more! So come on over, and join us in the revamp of TFF!
+\n **Instructions:**
+\n **1)**REVERIFY! Go to <#452260013944209419> and follow the instructions there to get re-verified!
+\n **2)**Get the Trial Farmer Role! Check the announcements for a form to apply for the farmer role! 
+\n **3)** Get started! Read the instructions listed in <#452268434953076746> and start completing events!
+\n *~Staff of TFF*
+\n Psst: Droid says join his servers for more dungeons! \nShatters Central: https://discord.gg/zNZUHbe \n Realm Raiders: https://discord.gg/GKe3m4p`)
+            
+                      
+        })
+                       
+    }
+});
 client.on('guildMemberAdd', member => {
 
     member.user.send({
@@ -24,7 +51,7 @@ client.on('guildMemberAdd', member => {
             },
             fields: [{
                     name: "Welcome to ***The Forgotten Foes***!",
-                    value: "To get started, read #<#384847019455283201>! Once you have fully read the rules, go to #verify and follow the instructions to get verified!",
+                    value: "To get started, read <#384847019455283201>! Once you have fully read the rules, go to <#452260013944209419> and follow the instructions to get verified!",
                     
                 }
                
@@ -319,7 +346,7 @@ if (!test[msg.author.id]) {
                     embed: {
                         color: 0xa3fb7a,
                         author: {
-                            name: `Verification | @${msg.author.tag}`,
+                            name: `Verification | ${userdata.ign}`,
                             icon_url: msg.author.avatarURL
                         },
                         fields: [{
