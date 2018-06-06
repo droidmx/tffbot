@@ -245,12 +245,12 @@ if (!test[nkilled]) {
 }
 		if (msg.content.startsWith(prefix + 'callsentry')) {
 			if (test[skilled] != 0) {
-			msg.reply('There is an event already active! If it is dead, type `!sentrydoed` and than call the new sentry!')
+			msg.reply('There is an event already active! If it is dead, type `!sentrydied` and than call the new sentry!')
 				return;
 			}
 		let anestloc = args
 		if (!msg.member.roles.some(r => ["Trial Farmer", "Certified Farmer"].includes(r.name))) return; 
-		const aidefk = nchannel.send(`@here A Nest has been called by ${msg.author}! 
+		const aidefk = schannel.send(`@here A Sentry has been called by ${msg.author}! 
 \n ***Location:***  ${anestloc} \n React with <:sentry:384850040612585482> if you are coming!`)
 		
 		const amessageeditid = await aidefk
