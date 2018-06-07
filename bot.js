@@ -24,16 +24,14 @@ client.on('message', message => {
         members.forEach((member) => {
             console.log(member.id);
             
-            member.send(`**The Forgotten Foes Revamp**\n As you may know, TFF has been inactive for quite a while
+            member.send(`**The Forgotten Foes**\n It has been one day since we launched our new system, and it has been a great success. But we still
+need all of YOU to go and GET VERIFIED. We want all of you to enjoy what we have made for you, and for that, you need to be verified!
 
-now, and has been losing popularity. The staff here at TFF has felt a need for a revamp of TFF, and we're finally ready!
-TFF now has a new bot for calling events, verification, and more! So come on over, and join us in the revamp of TFF!
 \n **Instructions:**
 \n **1)**REVERIFY! Go to <#452260013944209419> and follow the instructions there to get re-verified!
-\n **2)**Get the Trial Farmer Role! Check the announcements for a form to apply for the farmer role! 
+\n **2)**Get the Trial Farmer Role! Check the announcements for a form to apply for the farmer role, or pm one of the founders or me, ~Droid~#5799
 \n **3)** Get started! Read the instructions listed in <#452268434953076746> and start completing events!
-\n *~Staff of TFF*
-\n Psst: Droid says join his servers for more dungeons! \nShatters Central: https://discord.gg/zNZUHbe \n Realm Raiders: https://discord.gg/GKe3m4p`)
+\n *~Staff of TFF*`)
             
                       
         })
@@ -536,6 +534,11 @@ if (msg.content.startsWith(prefix + 'info')) {
   client.channel.send("Bot coded by Droid, join his discords! \n")
 }
   
+		if (msg.content.startsWith(prefix + 'trial')) {
+		if (!msg.member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS"))
+			return msg.reply(":x: Sorry, you do not have permission to use this!")
+			
+		}
 if (msg.content.startsWith(prefix + 'mute')) {
 	var argsss = msg.content.split(" ");
 if (!msg.member.hasPermission("MANAGE_ROLES_OR_PERMISSIONS"))
