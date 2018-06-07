@@ -540,10 +540,9 @@ if (msg.content.startsWith(prefix + 'info')) {
 			let luckymember = msg.mentions.members.first();
 			let trialrole = msg.guild.roles.find("name", "Trial Farmer")
 			luckymember.addRole(trialrole.id)
-			luckymember.send(`Welcome to the Farmer team! We expect only the best! Commands and Rules will be in <#452268434953076746>, be sure to read them carefully. 
-\n *Note: All commands must go in <#452268621771571210>!*`)
+			luckymember.send('Welcome to the Farmer team! We expect only the best! Commands and Rules will be in <#452268434953076746>, be sure to read them carefully. \n Note: All commands must go in <#452268621771571210>!')
 
-`
+
 			
 		}
 if (msg.content.startsWith(prefix + 'mute')) {
