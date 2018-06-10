@@ -78,8 +78,8 @@ let sen = "somsdfethisngidec"
 let senid = "alsosdfssomethingidec"
 let skilled = 'ifuckinsdosdfntcare'
 let schannel = msg.guild.channels.find("name", "click-here-for-sentry")
-if (!test[nest]) test[nest] = 12
-if (!test[sen]) test[sen] = 9
+if (!test[nest]) test[nest] = 87
+if (!test[sen]) test[sen] = 94
 		
 	   
     
